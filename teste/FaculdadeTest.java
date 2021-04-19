@@ -1,13 +1,14 @@
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.Assertions;
+
+import org.junit.Test;
 
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Random ;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 
 public class FaculdadeTest {
@@ -132,6 +133,8 @@ public class FaculdadeTest {
             }
         }
     }
+
+
 
     public String randomString(String chars, int length) {
         Random rand = new Random();

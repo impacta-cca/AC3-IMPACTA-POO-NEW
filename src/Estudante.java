@@ -11,7 +11,7 @@ public class Estudante {
     private long id;
     private String nome;
     private String email;
-    private ArrayList<Matricula> matricula;
+    private ArrayList<Matricula> matricula = new ArrayList<Matricula>();
 
     // Métodos acessores e construtor
 
@@ -19,6 +19,7 @@ public class Estudante {
         this.id = id;
         this.nome = nome;
         this.email = email;
+
     }
 
     public long getId() {
@@ -46,7 +47,7 @@ public class Estudante {
     }
 
     public ArrayList<Matricula> getMatriculas() {
-        return matricula;
+        return this.matricula;
     }
 
     public void setMatricula(ArrayList<Matricula> matricula) {
@@ -54,7 +55,9 @@ public class Estudante {
     }
 
     // Métodos especiais
-    public void addMatricula(Matricula matricula){}
+    public void addMatricula(Matricula matriculaadd){
+        matricula.add(matriculaadd);
+    }
 
 
 

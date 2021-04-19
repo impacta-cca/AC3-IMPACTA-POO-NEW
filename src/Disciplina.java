@@ -9,11 +9,12 @@ import java.util.logging.Logger;
 public class Disciplina {
     private String codigo;
     private int creditos;
-    private ArrayList<Matricula> matriculas;
+    private ArrayList<Matricula> matriculas = new ArrayList<Matricula>();
 
     public Disciplina(String codigo, int creditos) {
         this.codigo = codigo;
         this.creditos = creditos;
+
     }
 
     // Métodos acessores
@@ -40,18 +41,11 @@ public class Disciplina {
     public void setMatriculas(ArrayList<Matricula> matriculas) {
         this.matriculas = matriculas;
     }
-    
-    
+
+
     // Métodos especiais da UML
     public void addMatricula(Matricula matricula) {
         matriculas.add(matricula);
     }
-    
-    
-
-
-
-
-
 
 }

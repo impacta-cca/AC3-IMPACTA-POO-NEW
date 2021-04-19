@@ -5,7 +5,7 @@ public class Matricula {
 
     private Estudante estudante;
     private Disciplina disciplina;
-    
+
 
     public Matricula(Estudante estudante, Disciplina disciplina) {
         this.estudante = estudante;
@@ -29,6 +29,13 @@ public class Matricula {
     }
 
 
+    @Override
+    public String toString(){
+        return "Codigo Estudante: "+estudante.getNome()+" Codigo disciplina: " + disciplina.getCodigo();
+    }
 
-   
+
+
+
+
 }
