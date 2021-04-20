@@ -31,7 +31,7 @@ public class Faculdade {
         this.estudantes = estudantes;
     }
 
-    public List<Disciplina> getDisciplinas() {
+    public ArrayList<Disciplina> getDisciplinas() {
         return disciplinas;
     }
 

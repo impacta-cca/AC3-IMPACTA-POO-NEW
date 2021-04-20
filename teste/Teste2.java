@@ -7,9 +7,7 @@ public class Teste2 {
         faculdade.carregarDadosArquivo("disciplinas-bccdbdedee.txt","estudantes-bccdbdedee.txt","matriculas-bccdbdedee.txt");
         System.out.println(faculdade.getEstudantes().get(0).getNome()+" "+faculdade.getDisciplinas().get(0).getCodigo());
         Matricula matricula  = new Matricula(faculdade.getEstudantes().get(0),faculdade.getDisciplinas().get(0));
-
         System.out.println(faculdade.getEstudantes().get(0).getMatriculas().get(1).getDisciplina().getCodigo());
-
     }
 
 

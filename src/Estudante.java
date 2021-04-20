@@ -60,6 +60,16 @@ public class Estudante {
     }
 
 
+    public ArrayList<Disciplina> getDisciplinasMatriculadas(){
+        ArrayList<Disciplina> disciplinas = new ArrayList<Disciplina>();
+        for(Matricula matricula: this.getMatriculas()){
+            disciplinas.add(matricula.getDisciplina());
+        }
+        return disciplinas;
+
+    }
+
+
 
 
 }

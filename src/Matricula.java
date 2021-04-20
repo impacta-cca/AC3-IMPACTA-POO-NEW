@@ -33,9 +33,4 @@ public class Matricula {
     public String toString(){
         return "Codigo Estudante: "+estudante.getNome()+" Codigo disciplina: " + disciplina.getCodigo();
     }
-
-
-
-
-
 }

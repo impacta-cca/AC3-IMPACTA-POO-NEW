@@ -3,6 +3,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -48,4 +49,11 @@ public class Disciplina {
         matriculas.add(matricula);
     }
 
+    public ArrayList<Estudante> getEstudantesMatriculados(){
+        ArrayList<Estudante> estudantesMatriculados = new ArrayList<Estudante>();
+        for(Matricula matricula: this.getMatriculas()){
+            estudantesMatriculados.add(matricula.getEstudante());
+        }
+        return estudantesMatriculados;
+    }
 }
