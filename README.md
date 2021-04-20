@@ -2,7 +2,6 @@
 
 Faculdade Impacta - AC3 Programação Orientada a Objeto
 
-Faculdade Impacta
 
 INTEGRANTES:
 - Arthur Silva
