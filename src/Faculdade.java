@@ -51,27 +51,45 @@ public class Faculdade {
             BufferedReader arqDisciplina = new BufferedReader(new FileReader(nomeArquivoDisciplinas));
             BufferedReader arqMatriculas = new BufferedReader(new FileReader(nomeArquivoMatriculas));
 
+
             // Faz a leitura de cada arquivo, separando por linha e atributo
+            int nlinhaEstudante = 0;
+            int nlinhaDisciplinas = 0;
+            int nlinhaMatricula = 0;
 
+            while(arqEstudante.readLine() != null){
+                nlinhaEstudante++;
+            }
 
+            while(arqDisciplina.readLine() != null){
+                nlinhaDisciplinas++;
+            }
 
+            while(arqMatriculas.readLine() != null){
+                nlinhaMatricula++;
+            }
 
-            int nlinhaEstudante = 3; // Depois trocar por tamanmho de linhas do arquivo
-            int nlinhaDisciplinas = 3;
-            int nlinhaMatricula = 7;
+            arqEstudante = new BufferedReader(new FileReader(nomeArquivoEstudantes));
+            arqDisciplina = new BufferedReader(new FileReader(nomeArquivoDisciplinas));
+            arqMatriculas = new BufferedReader(new FileReader(nomeArquivoMatriculas));
+
 
             // loop para criar as instancias da classe Estudante e disciplina e add na ArrayList Estudante e
             // ArrayList Disciplina da classe Faculdade
+
             for (int i = 0; i < nlinhaEstudante; i++) {
                 String[] linhaEstudante = arqEstudante.readLine().split(":");
-                String[] linhaDisciplina = arqDisciplina.readLine().split(":");
                 Estudante estudante = new Estudante(Integer.parseInt(linhaEstudante[0]),linhaEstudante[1],linhaEstudante[2]);
-                Disciplina disciplina = new Disciplina(linhaDisciplina[0],Integer.parseInt(linhaDisciplina[1]));
                 this.estudantes.add(estudante);
+            }
+
+            for(int i=0;i<nlinhaDisciplinas;i++){
+                String[] linhaDisciplina = arqDisciplina.readLine().split(":");
+                Disciplina disciplina = new Disciplina(linhaDisciplina[0],Integer.parseInt(linhaDisciplina[1]));
                 this.disciplinas.add(disciplina);
             }
 
-            for(int i=0;i<7;i++){
+            for(int i=0;i<nlinhaMatricula;i++){
                 String[] linhaMatricula = arqMatriculas.readLine().split(":");
                 int indexEstudante = 0;
                 int indexDisciplina = 0;
@@ -89,9 +107,6 @@ public class Faculdade {
                 Matricula matricula = new Matricula(estudantes.get(indexEstudante),disciplinas.get(indexDisciplina));
                 estudantes.get(indexEstudante).addMatricula(matricula);
                 disciplinas.get(indexDisciplina).addMatricula(matricula);
-
-
-
             }
             arqEstudante.close();
             arqDisciplina.close();
@@ -99,10 +114,5 @@ public class Faculdade {
         } catch (IOException ex) {
             Logger.getLogger(Faculdade.class.getName()).log(Level.SEVERE, null, ex);
         }
-
-        
     }
-
-
-
 }
